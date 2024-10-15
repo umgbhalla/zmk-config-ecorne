@@ -11,11 +11,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    chosen {
-        // zmk,matrix_transform = &default_transform;
-
-        zmk,matrix_transform = &five_column_transform;
-    };
+    chosen { zmk,matrix_transform = &five_column_transform; };
 };
 
 / {
@@ -79,10 +75,10 @@
         raise {
             display-name = "SYM";
             bindings = <
-  &kp GRAVE    &none  &none   &none  &none             &kp PG_UP  &none     &none              &kp HOME   &kp END
-  &kp TAB      &none  &none   &none  &studio_unlock    &kp LEFT   &kp DOWN  &kp UP             &kp RIGHT  &kp BACKSPACE
-  &kp LS(TAB)  &none  &none   &none  &none             &kp PG_DN  &kp APOS  &kp DOUBLE_QUOTES  &kp INS    &kp DEL
-                      &trans  &mo 3  &trans            &trans     &trans    &trans
+  &kp GRAVE    &kp LS(GRAVE)  &none   &none  &none             &kp PG_UP  &none     &none              &kp HOME   &kp END
+  &kp TAB      &none          &none   &none  &studio_unlock    &kp LEFT   &kp DOWN  &kp UP             &kp RIGHT  &kp BACKSPACE
+  &kp LS(TAB)  &none          &none   &none  &none             &kp PG_DN  &kp APOS  &kp DOUBLE_QUOTES  &kp INS    &kp DEL
+                              &trans  &mo 3  &trans            &trans     &trans    &trans
             >;
         };
 
@@ -101,7 +97,7 @@
             bindings = <
   &trans  &trans  &trans     &trans  &trans    &trans  &trans          &kp UP_ARROW    &trans     &trans
   &trans  &trans  &trans     &trans  &trans    &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans
-  &trans  &kp X   &trans     &trans  &trans    &trans  &trans          &trans          &kp DOT    &trans
+  &trans  &trans  &trans     &trans  &trans    &trans  &trans          &trans          &trans     &trans
                   &kp SPACE  &to 0   &trans    &trans  &to 0           &kp ENTER
             >;
         };
