@@ -19,10 +19,11 @@
 
         src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ];
 
-        board = "nice_nano_v2";
-        shield = "settings_reset";
+        board = "corneish_zen_v2_%PART%";
 
-        zephyrDepsHash = "sha256-V/PpfDYjbCaQIQFmR2V7HeFyPRD7bCnwkpUkxJuudTw=";
+        zephyrDepsHash = "sha256-Nmytzn/UyNOGONSlaB0VMfpi0obQ/NKY0ge8p0+ntAg=";
+
+        enableZmkStudio = true;
 
         meta = {
           description = "ZMK firmware";

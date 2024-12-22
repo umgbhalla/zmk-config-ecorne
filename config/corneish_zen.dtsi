@@ -9,6 +9,11 @@
 #include <nordic/nrf52840_qiaa.dtsi>
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "layout.dtsi"
+
+&corne_5col_layout {
+    transform = <&five_column_transform>;
+};
 
 / {
     model = "Corne-ish Zen";
@@ -21,7 +26,7 @@
         zmk,kscan = &kscan0;
         zmk,display = &epd;
         zephyr,console = &cdc_acm_uart;
-        zmk,matrix-transform = &five_column_transform;
+        zmk,physical-layout = &corne_5col_layout;
     };
 
     default_transform: keymap_transform_0 {

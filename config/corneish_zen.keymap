@@ -11,10 +11,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    chosen { zmk,matrix_transform = &five_column_transform; };
-};
-
-/ {
     combos {
         compatible = "zmk,combos";
 
@@ -75,19 +71,19 @@
         raise {
             display-name = "SYM";
             bindings = <
-  &kp GRAVE    &kp LS(GRAVE)  &none   &none  &none             &kp PG_UP  &none     &none              &kp HOME   &kp END
-  &kp TAB      &none          &none   &none  &studio_unlock    &kp LEFT   &kp DOWN  &kp UP             &kp RIGHT  &kp BACKSPACE
-  &kp LS(TAB)  &none          &none   &none  &none             &kp PG_DN  &kp APOS  &kp DOUBLE_QUOTES  &kp INS    &kp DEL
-                              &trans  &mo 3  &trans            &trans     &trans    &trans
+  &kp GRAVE    &kp LS(GRAVE)  &none   &none  &none    &kp PG_UP  &none     &none              &kp HOME   &kp END
+  &kp TAB      &none          &none   &none  &none    &kp LEFT   &kp DOWN  &kp UP             &kp RIGHT  &kp BACKSPACE
+  &kp LS(TAB)  &none          &none   &none  &none    &kp PG_DN  &kp APOS  &kp DOUBLE_QUOTES  &kp INS    &kp DEL
+                              &trans  &mo 3  &trans   &trans     &trans    &trans
             >;
         };
 
         middle {
             display-name = "FUNC";
             bindings = <
-  &kp F1      &kp F2             &kp F3        &kp F4  &kp F5      &kp F6        &kp F7        &kp F8        &kp F9  &kp F10
-  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &trans  &kp CAPS    &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1  &trans  &kp F11
-  &trans      &trans             &trans        &trans  &to 4       &out OUT_USB  &trans        &trans        &trans  &kp F12
+  &kp F1      &kp F2             &kp F3        &kp F4  &kp F5      &kp F6        &kp F7        &kp F8        &kp F9          &kp F10
+  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &trans  &kp CAPS    &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1  &trans          &kp F11
+  &trans      &trans             &trans        &trans  &to 4       &out OUT_USB  &trans        &trans        &studio_unlock  &kp F12
                                  &trans        &trans  &trans      &trans        &trans        &trans
             >;
         };
