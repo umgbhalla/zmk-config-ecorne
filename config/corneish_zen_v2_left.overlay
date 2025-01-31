@@ -6,7 +6,6 @@
 */
 
 #include "corneish_zen.dtsi"
-#include <dt-bindings/led/led.h>
 
 
 

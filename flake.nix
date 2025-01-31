@@ -15,14 +15,20 @@
       default = firmware;
 
       firmware = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
-        name = "firmware";
-
+        name = "corne";
         src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ];
 
+        # boards
         board = "corneish_zen_v2_%PART%";
+        parts = [ "left" "right" ];
 
-        zephyrDepsHash = "sha256-Nmytzn/UyNOGONSlaB0VMfpi0obQ/NKY0ge8p0+ntAg=";
 
+        # bt settings reset
+        #board = "nice_nano_v2";
+        #shield = "settings_reset";
+        #parts = [ "left" "right" "dongle" ];
+
+        zephyrDepsHash = "sha256-av76U3haI31dtBPkGIM9DpDml6hFLOBqD7oKg+yxT7c=";
         enableZmkStudio = true;
 
         meta = {
