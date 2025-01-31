@@ -21,7 +21,15 @@
         # boards
         board = "corneish_zen_v2_%PART%";
         parts = [ "left" "right" ];
+        # enable for dongle setup
+        #extraCmakeFlags = [ "-DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n" ];
+        # logging
+        #extraWestBuildFlags = [ "-S zmk-usb-logging" ];
 
+        # dongle
+        #board = "nice_nano_v2";
+        #shield = "corneish_zen_v2_dongle";
+        #parts = [ "dongle" ];
 
         # bt settings reset
         #board = "nice_nano_v2";

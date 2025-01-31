@@ -46,14 +46,6 @@
 &five_column_transform {
     col-offset = <6>;
 };
-&spi3 {
-    compatible = "nordic,nrf-spim";
-    status = "okay";
-
-    pinctrl-0 = <&spi3_default>;
-    pinctrl-1 = <&spi3_sleep>;
-    pinctrl-names = "default", "sleep";
-};
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -107,4 +99,12 @@
         cdi = <0xd2>;
         tcon = <0x22>;
     };
+};
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
 };

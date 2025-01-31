@@ -6,8 +6,10 @@
 */
 
 #include <behaviors.dtsi>
+#include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 
 / {
@@ -71,10 +73,10 @@
         raise {
             display-name = "SYM";
             bindings = <
-  &kp GRAVE    &kp LS(GRAVE)  &none   &none  &none    &kp PG_UP  &none     &none              &kp HOME   &kp END
-  &kp TAB      &none          &none   &none  &none    &kp LEFT   &kp DOWN  &kp UP             &kp RIGHT  &kp BACKSPACE
-  &kp LS(TAB)  &none          &none   &none  &none    &kp PG_DN  &kp APOS  &kp DOUBLE_QUOTES  &kp INS    &kp DEL
-                              &trans  &mo 3  &trans   &trans     &trans    &trans
+  &kp GRAVE    &kp LS(GRAVE)   &mkp MB4      &mkp MB5        &none            &kp PG_UP  &none     &none              &kp HOME   &kp END
+  &kp TAB      &msc SCRL_LEFT  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &kp LEFT   &kp DOWN  &kp UP             &kp RIGHT  &kp BACKSPACE
+  &kp LS(TAB)  &none           &none         &none           &none            &kp PG_DN  &kp APOS  &kp DOUBLE_QUOTES  &kp INS    &kp DEL
+                               &trans        &mo 3           &trans           &trans     &trans    &trans
             >;
         };
 
