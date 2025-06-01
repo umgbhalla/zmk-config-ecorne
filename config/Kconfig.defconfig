@@ -3,17 +3,19 @@
 # SPDX-License-Identifier: MIT
 #
 
-if BOARD_CORNEISH_ZEN_LEFT
+if BOARD_CORNEISH_ZEN_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "Corne-ish Zen"
 
+# Set the split role to central on the right half
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-endif # BOARD_CORNEISH_ZEN_LEFT
+endif # BOARD_CORNEISH_ZEN_RIGHT
 
 
+# Common configuration for both halves
 if BOARD_CORNEISH_ZEN_LEFT || BOARD_CORNEISH_ZEN_RIGHT
 
 config BOARD
@@ -56,12 +58,13 @@ config IL0323
 
 config ZMK_DISPLAY_BLANK_ON_IDLE
     default n
+
 # Needed for the IL0323 driver which allocs memory to clear the display
 config HEAP_MEM_POOL_SIZE
     default 1024
 
- config LV_Z_MEM_POOL_SIZE
-     default 4096
+config LV_Z_MEM_POOL_SIZE
+    default 4096
 
 endif # ZMK_DISPLAY
 
@@ -79,6 +82,8 @@ menuconfig CUSTOM_WIDGET_PERIPHERAL_STATUS
 
 endif # BOARD_CORNEISH_ZEN_LEFT || BOARD_CORNEISH_ZEN_RIGHT
 
+
+# Battery support for v1 boards
 if BOARD_CORNEISH_ZEN_V1_LEFT || BOARD_CORNEISH_ZEN_V1_RIGHT
 
 config BQ274XX
@@ -87,6 +92,7 @@ config BQ274XX
 endif # BOARD_CORNEISH_ZEN_V1_LEFT || BOARD_CORNEISH_ZEN_V1_RIGHT
 
 
+# DCDC config for v2 boards
 config BOARD_ENABLE_DCDC
     bool "Enable DCDC mode"
     select SOC_DCDC_NRF52X
