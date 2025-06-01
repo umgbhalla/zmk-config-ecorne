@@ -5,14 +5,15 @@ include:
     # for dongle setup
     #cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-    # for zmk studio(remove for dongle setup)
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-
+    
   - board: corneish_zen_v2_right
 
     # for dongle setup
     #cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    # for zmk studio(remove for dongle setup)
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+
 
   # dongle
   - board: nice_nano_v2
